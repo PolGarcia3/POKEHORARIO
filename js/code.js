@@ -34,7 +34,7 @@ function getListRandom(n, min, max) {
 }
 
 window.onload = function() {
-    //alert("Hello World");
+    alert("Hello World");
     saludo();
     console.log(getListRandom(10, 1, 10));
 }
