@@ -47,11 +47,8 @@ img {
     justify-content: center;
 }
 
-.button {
+#button {
     width: 10vh;
     cursor: pointer;
-}
-
-.card {
-    opacity: 0.5;
+    opacity: 1;
 }
