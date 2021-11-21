@@ -4,7 +4,6 @@
 
 body {
     margin: 0px;
-    background-color: rgb(0, 0, 0);
 }
 
 div.scrollmenu {
@@ -35,7 +34,7 @@ footer {
 
 .tittle {
     margin: 0;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 img {
@@ -49,6 +48,10 @@ img {
 }
 
 .button {
-    width: 10%;
+    width: 10vh;
     cursor: pointer;
+}
+
+.card {
+    opacity: 0.5;
 }
