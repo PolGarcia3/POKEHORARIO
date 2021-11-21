@@ -1,11 +1,6 @@
-window.onload = function() {
-    alert("Hello World");
-    fondo();
-    getRndInteger();
-    console.log(getListRandom(10, 1, 10));
-}
+//EJERCICIO 2
 
-function fondo() {
+function saludo() {
     fecha = new Date();
     hora = fecha.getHours();
     if (hora < 7 || hora > 17) {
@@ -19,19 +14,71 @@ function fondo() {
     }
 }
 
-function getListRandom(n, min, max) {
-    getRndInteger();
-}
+//EJERCICIO 3
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function getListRandom(n, min, max) {
+    var array = [];
+    for (let i = 0; i < n; i++) {
+        var random = getRndInteger(min, max);
+        if (array.includes(random)) {
+            i--;
+        } else {
+            array.push(random);
+        }
+    }
+    return array;
+}
+
+window.onload = function() {
+    //alert("Hello World");
+    saludo();
+    console.log(getListRandom(10, 1, 10));
+}
+
+//EJERCICIO 4
+
 function buttonOpacity() {
-    if (opacity == 0.5) {
-        document.getElementsByClassName("card").style.opacity = "1";
+    let boton = document.getElementById("button");
+    const button = document.querySelector("#button");
+    const opacidad = getComputedStyle(button);
+
+    if (opacidad.opacity == 0.5) {
+        boton.style.opacity = "1";
     } else {
-        document.getElementsByClassName("card").style.opacity = "0.5";
+        boton.style.opacity = "0.5";
+    }
+}
+
+//EJERCICIO 5
+
+function galleryRandom(){
+    let min = 1000;
+    let max = 0;
+    let imagenes = document.getElementsByTagName("img");
+    for (let i = 0; i < 10; i++) {
+        let aux = imagenes[i].getAttribute("src");
+        aux = aux.split("_").pop();
+        aux = aux.split(".").shift();
+        aux = parseInt(aux, 10);
+
+        if (aux > max) {
+            max = aux;
+        }
+
+        if (aux < min) {
+            min = aux;
+        }
+    }
+
+    let images = document.getElementsByClassName("img");
+    let listRnd = getListRandom(10, min, max);
+
+    for (let i = 0; i < 10; i++) {
+        images[i].setAttribute("src", "./img/IMG_" + listRnd[i] + ".PNG");
     }
 }
 
