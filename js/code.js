@@ -34,9 +34,9 @@ function getListRandom(n, min, max) {
 }
 
 window.onload = function() {
-    alert("Hello World");
+    //alert("Hello World");
     saludo();
-    console.log(getListRandom(16, 1, 16));
+    console.log(getListRandom(10, 1, 10));
 }
 
 //EJERCICIO 4
@@ -59,11 +59,11 @@ function galleryRandom(){
     let min = 1000;
     let max = 0;
     let imagenes = document.getElementsByTagName("img");
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 10; i++) {
         let aux = imagenes[i].getAttribute("src");
         aux = aux.split("_").pop();
         aux = aux.split(".").shift();
-        aux = parseInt(aux, 16);
+        aux = parseInt(aux, 10);
 
         if (aux > max) {
             max = aux;
@@ -75,9 +75,9 @@ function galleryRandom(){
     }
 
     let images = document.getElementsByClassName("img");
-    let listRnd = getListRandom(16, min, max);
+    let listRnd = getListRandom(10, min, max);
 
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 10; i++) {
         images[i].setAttribute("src", "./img/IMG_" + listRnd[i] + ".PNG");
     }
 }
