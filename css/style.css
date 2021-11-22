@@ -11,6 +11,7 @@ div.scrollmenu {
     overflow: auto;
     white-space: nowrap;
     height: 50vh;
+    -ms-overflow-style: none;
 }
 
 div.scrollmenu div.card {
